@@ -17,7 +17,8 @@ npm install swiper*
 # environment variables
 .env
 .env.production
-
+.github
+.vscode
 # macOS-specific files
 .DS_Store
 

@@ -6,6 +6,6 @@ import Footer from '../components/Footer.astro';
 ---
 <Layout>
     <Nav/>
-    <Events/>
-    <Footer/>
+    <Events client:load/>
+    <Footer client:visible/>
 </Layout>

@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout>
+  <section class="hero" id="hero">
+    <div class="hero-sticky">
+      <p class="hero-text">
+        <span class="hero-dim">Bridging Nature with technology</span>
+        <span class="hero-fill" id="heroFill">Bridging Nature with technology</span>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      onUpdate: (self) => {
+        gsap.set("#heroFill", {
+          clipPath: `inset(0 ${((1 - self.progress) * 100).toFixed(3)}% 0 0)`
+        });
+      }
+    });
+  </script>
+</Layout>
+
+<style>
+  .hero {
+    height: 250vh;
+    background: #0a0f0a;
+  }
+
+  .hero-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-text {
+    font-size: clamp(24px, 6vw, 64px);
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-dim {
+    color: rgba(255, 255, 255, 0.12);
+    display: block;
+    white-space: nowrap;
+  }
+@media (max-width:350px)
+{
+   .hero-text {
+    font-size: 20px;
+   }
+}
+  .hero-fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #8bc34a, #009688);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    clip-path: inset(0 100% 0 0);
+  }
+</style>

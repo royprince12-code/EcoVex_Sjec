@@ -30,31 +30,10 @@ import Layout from '../layouts/Layout.astro';
                 <span class = "type">talk</span>
                 <span class = "progress">complete</span>
         </div>
-        <div class="container">
-            <div class="img"></div>
-            <h3 class="time">12-05-2023</h3>
-            <h3 class="title">(; Project Clover</h3>
-            <p class="content">Project Clover is our flagship initiative, focused on developing a cutting-edge electric vehicle that combines sustainability with high performance.</p> 
-                <span class = "type">session</span>
-                <span class = "progress">complete</span>
         </div>
-        <div class="container">
-            <div class="img"></div>
-            <h3 class="time">12-05-2023</h3>
-            <h3 class="title">(; Project Clover</h3>
-            <p class="content">Project Clover is our flagship initiative, focused on developing a cutting-edge electric vehicle that combines sustainability with high performance.</p> 
-                <span class = "type">session</span>
-                <span class = "progress">complete</span>
-        </div>
-        <div class="container">
-            <div class="img"></div>
-            <h3 class="time">12-05-2023</h3>
-            <h3 class="title">(; Project Clover</h3>
-            <p class="content">Project Clover is our flagship initiative, focused on developing a cutting-edge electric vehicle that combines sustainability with high performance.</p> 
-                <span class = "type">workshop</span>
-                <span class = "progress">complete</span>
-        </div>
-        </div>
+        <div class="loading">
+    <a href="/EcoVex_Sjec/event" class="load">View Event Highlights</a>
+    </div>
 </div>
 </Layout>
 
@@ -65,7 +44,7 @@ import Layout from '../layouts/Layout.astro';
     box-sizing: border-box;
 }
 #main{
-    min-height: 170vh;
+    min-height: 100vh;
     height: auto;
     background-color:#0a0f0a ;
 }
@@ -76,11 +55,11 @@ import Layout from '../layouts/Layout.astro';
         border-radius: 20px;
         margin: 20px;
         padding: 40px;
-        border-radius: 20px;
         justify-items: start;
+        transition: translate ease;
 }
 #project{
-    display: grid;
+     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
     justify-content: center;
@@ -91,35 +70,27 @@ import Layout from '../layouts/Layout.astro';
     background-color: #ffffff1a;
     border-radius: 50%;
     margin-bottom: 30px;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin-left: auto;
     margin-right: auto;
-    background-image: url("/logo.png");
-    background-size:contain;
+    background-image: url("/logo1.jpeg");
+    background-size:130px;
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 15px;
     border: 2px solid rgba(0, 150, 136, 0.2);
 }
-.container:hover{
-    translate: 0 -5px;
-    box-shadow: rgba(52, 211, 153, 0.3) 0px 10px 30px -10px;
-    .img{
-        translate: 0 -1px;
-        scale: 1.05;
-    }
-}
 .time{
     color: #e0f2f1;
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 .title{
     color: #e0f2f1;
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 20px;
     padding-left: 30px;
 }
@@ -127,6 +98,14 @@ import Layout from '../layouts/Layout.astro';
     color: #a0ac9f;
     font-size: 16px;
     margin-bottom: 90px;
+}
+.container:hover{
+    translate: 0 -10px;
+     box-shadow: rgba(52, 211, 153, 0.3) 0px 10px 30px -10px;
+    .img{
+        translate: 0 -10px;
+        box-shadow: rgba(52, 211, 153, 0.3) 0px 10px 30px -10px;
+    }
 }
 .type{
         border: 1px solid #a0ac9f;
@@ -158,7 +137,7 @@ import Layout from '../layouts/Layout.astro';
         font-size: 48px;
         color: #e0f2f1;
         text-align: center;
-        padding-top: 130px;
+        padding-top: 50px;
 }
 .gradient{
         background: linear-gradient(135deg, #4a7c44 0%, #34e9bd 100%);
@@ -171,8 +150,84 @@ import Layout from '../layouts/Layout.astro';
         font-size: 18px;
         text-align: center;
         margin-top: 10px;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
         padding-left: 30px;
         padding-right: 30px;
  }
+.load{
+    text-decoration: none;
+    color: #e0f2f1;
+    background-color: #ffffff0D;
+    padding: 20px 40px 20px 40px;
+    border-radius: 50px;
+    border: 1.2px solid #34e9bd;
+    font-weight: bold ;
+    font-size: 16px;
+    transition:color 0.2s ease;
+}
+.load:hover{
+    background-color: #ffffff1a;
+}
+.loading{
+    padding:60px 20px 60px 20px;
+    margin-top: 40px;
+    margin-left:42%;
+    margin-right: 30%;
+}
+@media (max-width: 1200px)
+{
+    .loading{
+        margin-left:36%;
+        margin-right: 20%;
+}
+}
+@media (max-width: 850px)
+{
+    .loading{
+        margin-left:260px;
+        margin-right: 0;
+}
+}
+@media (max-width: 800px)
+{
+    .loading{
+        margin-left:200px;
+        margin-right: 0;
+}
+}
+@media (max-width: 650px)
+{
+    .loading{
+        margin-left:170px;
+        margin-right: 0;
+}
+}
+@media (max-width: 550px)
+{
+    .loading{
+        margin-left:140px;
+        margin-right: 0;
+}
+}
+@media (max-width: 500px)
+{
+    .loading{
+        margin-left:100px;
+        margin-right: 0;
+}
+}
+@media (max-width: 400px)
+{
+    .loading{
+        margin-left:40px;
+        margin-right: 0;
+}
+}
+@media (max-width: 350px)
+{
+    .loading{
+        margin-left:20px;
+        margin-right: 0;
+}
+}
 </style>
